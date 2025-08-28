@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>機場接送價格表 | Airport Transfer</title>
+  <meta name="description" content="機場接送服務價格與路線一覽表" />
+
+  <style>
+    :root{
+      --bg: #0f172a; --card: #ffffffee; --primary: #0ea5e9; --text: #0b1324;
+      --muted: #64748b; --ring: #bae6fd; --table-stripe: #f8fafc;
+    }
+    body{
+      margin:0; color:var(--text); background-color: var(--bg);
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23ffffff14' stroke-width='2'%3E%3Cpath d='M16 64 l44 0 12 -10 0 -8 -12 -10 -44 0' /%3E%3Cpath d='M72 46 l30 -14 6 6 -22 20'/%3E%3Ccircle cx='18' cy='64' r='2' fill='%23ffffff26'/%3E%3C/g%3E%3C/svg%3E");
+      background-size:140px 140px;
+    }
+    .wrap{max-width:1100px; margin:40px auto; padding:0 20px;}
+    .hero{background: var(--card); border-radius:18px; padding:28px 24px;
+      box-shadow:0 10px 30px rgba(0,0,0,.2); backdrop-filter:blur(4px); border:1px solid #e2e8f0;}
+    .title{margin:0 0 6px 0; font-size:clamp(22px,3vw,32px); letter-spacing:.5px;}
+    .subtitle{margin:0 0 14px 0; color: var(--muted); font-size:clamp(14px,2vw,16px);}
+    .contact{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px;}
+    .tag{background:#e0f2fe; border:1px solid var(--ring); color:#075985; padding:8px 12px; border-radius:999px; font-size:14px;}
+    .card{margin-top:18px; background: var(--card); border-radius:18px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.2); border:1px solid #e2e8f0;}
+    .card h2{margin:6px 6px 14px 6px; font-size:18px; color:#0b1324;}
+    .table-scroll{overflow:auto; border-radius:12px; border:1px solid #e2e8f0;}
+    table{width:100%; border-collapse:collapse; background:white; font-size:15px;}
+    thead th{position:sticky; top:0; background:#f1f5f9; color:#0b1324; text-align:left; padding:12px 14px; border-bottom:1px solid #e2e8f0; white-space:nowrap; z-index:1;}
+    tbody td{padding:12px 14px; border-bottom:1px solid #f1f5f9;}
+    tbody tr:nth-child(odd){background: var(--table-stripe);}
+    .badge{padding:4px 8px; border-radius:999px; border:1px solid #e2e8f0; background:#f8fafc; font-size:12px; color:#1f2937; white-space:nowrap;}
+    .note{font-size:13px; color:var(--muted); margin-top:10px; line-height:1.6;}
+    @media(max-width:480px){thead{display:none;} table,tbody,tr,td{display:block;width:100%;} tbody tr{margin:10px 10px 16px 10px; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; background:white;} tbody td{border:none; padding:10px 12px;} tbody td::before{content:attr(data-label); display:block; font-size:12px; color:var(--muted); margin-bottom:3px;}}
+    tbody tr:hover{outline:2px solid #e2e8f0; outline-offset:-2px; background:#eef6ff;}
+    a{color:var(--primary); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    #langSelect{margin-left:10px; padding:5px 10px; border-radius:5px; border:1px solid #ccc;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1 class="title" data-i18n="title"></h1>
+      <p class="subtitle" data-i18n="subtitle"></p>
+      <div class="contact">
+        <span class="tag" data-i18n="phone"></span>：<a href="tel:+886908232851">+886908232851</a>
+        <span class="tag" data-i18n="line"></span>：<a href="https://lin.ee/JkHMkk9">💬 LINE</a>
+        <span class="tag" data-i18n="service_area"></span>
+        <span class="tag" data-i18n="vehicle"></span>
+        <label class="tag">Language: 
+          <select id="langSelect">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="th">ไทย</option>
+            <option value="id">Bahasa</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="priceTitle"></h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr id="tableHeader"></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <p class="note" id="tableNote"></p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="bookingTitle"></h2>
+      <ol id="bookingList"></ol>
+      <div class="note" id="extraService"></div>
+    </section>
+
+    <footer style="text-align:center; color:#cbd5e1; font-size:13px; margin:22px 0;">
+      © <span id="y"></span> <span id="footerText"></span>
+    </footer>
+  </div>
+
+  <script>
+    const langData = {};
+    async function loadLang(){
+      const res = await fetch("lang.json");
+      Object.assign(langData, await res.json());
+      setLang(document.getElementById("langSelect").value);
+    }
+
+    function setLang(lang){
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        if(langData[el.dataset.i18n]) el.textContent = langData[el.dataset.i18n][lang];
+      });
+
+      const thead = document.getElementById("tableHeader");
+      thead.innerHTML="";
+      langData.table_header.forEach(th=>{
+        const thEl = document.createElement("th");
+        thEl.textContent = th[lang];
+        thead.appendChild(thEl);
+      });
+
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML="";
+      langData.table_rows.forEach(row=>{
+        const tr=document.createElement("tr");
+        tr.innerHTML=`
+          <td data-label="${langData.table_header[0][lang]}">${row.area[lang]}</td>
+          <td data-label="${langData.table_header[1][lang]}">${row.taoyuan_to_city[lang]}</td>
+          <td data-label="${langData.table_header[2][lang]}">${row.city_to_taoyuan[lang]}</td>
+          <td data-label="${langData.table_header[3][lang]}">${row.songshan_city[lang]}</td>
+          <td data-label="${langData.table_header[4][lang]}"><span class="badge">${row.vehicle[lang]}</span></td>
+          <td data-label="${langData.table_header[5][lang]}">${row.note[lang]}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById("tableNote").textContent = langData.note[lang];
+
+      const bookingList = document.getElementById("bookingList");
+      bookingList.innerHTML = "";
+      langData.booking_steps.forEach(step=>{
+        const li=document.createElement("li");
+        li.textContent = step[lang];
+        bookingList.appendChild(li);
+      });
+
+      document.getElementById("extraService").textContent = langData.extraService[lang];
+      document.getElementById("footerText").textContent = langData.footer[lang];
+    }
+
+    document.getElementById("langSelect").addEventListener("change",(e)=>setLang(e.target.value));
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+    loadLang();
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "title":{"zh":"機場接送價格表","en":"Airport Transfer Price List","vi":"Bảng giá đưa đón sân bay","th":"ตารางราคารถรับส่งสนามบิน","id":"Daftar Harga Antar Bandara"},
+  "subtitle":{"zh":"透明收費・專業司機・準時接送｜桃園機場／松山機場","en":"Transparent pricing・Professional drivers・Punctual transfers｜Taoyuan/Songshan Airport","vi":"Giá minh bạch・Tài xế chuyên nghiệp・Đúng giờ｜Sân bay Taoyuan/Songshan","th":"ราคาโปร่งใส・คนขับมืออาชีพ・ตรงเวลา｜สนามบินเถาหยวน/ซงซาน","id":"Harga transparan・Sopir profesional・Tepat waktu｜Bandara Taoyuan/Songshan"},
+  "phone":{"zh":"電話","en":"Phone","vi":"Điện thoại","th":"โทรศัพท์","id":"Telepon"},
+  "line":{"zh":"💬 LINE 聯絡我","en":"💬 Contact me on LINE","vi":"💬 Liên hệ LINE","th":"💬 ติดต่อผ่าน LINE","id":"💬 Hubungi via LINE"},
+  "service_area":{"zh":"服務地區：全省加LINE詢問價格","en":"Service area: whole Taiwan, ask via LINE","vi":"Khu vực dịch vụ: toàn quốc, hỏi qua LINE","th":"พื้นที่ให้บริการ: ทั่วไต้หวัน, สอบถามผ่าน LINE","id":"Area layanan: seluruh Taiwan, tanya via LINE"},
+  "vehicle":{"zh":"車型：五人座／七人座 / 九人座 / 13人座小巴士","en":"Vehicle: 5/7/9/13-Seater minibus","vi":"Xe: 5/7/9/13 chỗ","th":"รถ: 5/7/9/13 ที่นั่ง","id":"Kendaraan: 5/7/9/13 tempat duduk"},
+  "priceTitle":{"zh":"單程價格（新台幣，含高速過路費）","en":"One-way price (NT$, including highway tolls)","vi":"Giá một chiều (NT$, bao gồm phí cao tốc)","th":"ราคาขาเดียว (NTS$, รวมค่าทางด่วน)","id":"Harga satu arah (NT$, termasuk tol)"},
+  "table_header":[
+    {"zh":"出發／抵達區域","en":"Departure/Arrival Area","vi":"Khu vực đi/đến","th":"พื้นที่ต้นทาง/ปลายทาง","id":"Area Keberangkatan/ Tujuan"},
+    {"zh":"桃園機場 → 市區","en":"Taoyuan Airport → City","vi":"Sân bay Taoyuan → Thành phố","th":"สนามบินเถาหยวน → เมือง","id":"Bandara Taoyuan → Kota"},
+    {"zh":"市區 → 桃園機場","en":"City → Taoyuan Airport","vi":"Thành phố → Sân bay Taoyuan","th":"เมือง → สนามบินเถาหยวน","id":"Kota → Bandara Taoyuan"},
+    {"zh":"松山機場 ⇄ 市區","en":"Songshan Airport ⇄ City","vi":"Sân bay Songshan ⇄ Thành phố","th":"สนามบินซงซาน ⇄ เมือง","id":"Bandara Songshan ⇄ Kota"},
+    {"zh":"車型","en":"Vehicle","vi":"Xe","th":"รถ","id":"Kendaraan"},
+    {"zh":"備註","en":"Notes","vi":"Ghi chú","th":"หมายเหตุ","id":"Catatan"}
+  ],
+  "table_rows":[
+    {"area":{"zh":"嘉義市","en":"Chiayi City","vi":"Thành phố Gia Nghĩa","th":"เมืองเจียอี้","id":"Kota Chiayi"},
+     "taoyuan_to_city":{"zh":"$4,800","en":"$4,800","vi":"$4,800","th":"$4,800","id":"$4,800"},
+     "city_to_taoyuan":{"zh":"$4,500","en":"$4,500","vi":"$4,500","th":"$4,500","id":"$4,500"},
+     "songshan_city":{"zh":"$5,200","en":"$5,200","vi":"$5,200","th":"$5,200","id":"$5,200"},
+     "vehicle":{"zh":"5人座／7人座 +$200","en":"5-Seater / 7-Seater +$200","vi":"5 chỗ / 7 chỗ +$200","th":"5 ที่นั่ง / 7 ที่นั่ง +$200","id":"5-Seater / 7-Seater +$200"},
+     "note":{"zh":"含基本等候 30 分鐘","en":"Includes 30 min free waiting","vi":"Bao gồm 30 phút chờ miễn phí","th":"รวมเวลารอ 30 นาที","id":"Includes 30 min free waiting"}
+    },
+    {"area":{"zh":"嘉義縣（民雄／太保）","en":"Chiayi County (Minxiong/Taibao)","vi":"Huyện Gia Nghĩa (Minh Hùng/Thái Bảo)","th":"เจียอี้เคาน์ตี้ (มินซง/ไทเปา)","id":"Kab. Chiayi (Minxiong/Taibao)"},
+     "taoyuan_to_city":{"zh":"$5,000","en":"$5,000","vi":"$5,000","th":"$5,000","id":"$5,000"},
+     "city_to_taoyuan":{"zh":"$4,700","en":"$4,700","vi":"$4,700","th":"$4,700","id":"$4,700"},
+     "songshan_city":{"zh":"$5,400","en":"$5,400","vi":"$5,400","th":"$5,400","id":"$5,400"},
+     "vehicle":{"zh":"5人座／7人座 +$200","en":"5-Seater / 7-Seater +$200","vi":"5 chỗ / 7 chỗ +$200","th":"5 ที่นั่ง / 7 ที่นั่ง +$200","id":"5-Seater / 7-Seater +$200"},
+     "note":{"zh":"夜間(22:00–06:00) +$300","en":"Night (22:00–06:00) +$300","vi":"Ban đêm (22:00–06:00) +$300","th":"กลางคืน (22:00–06:00) +$300","id":"Night (22:00–06:00) +$300"}
+    },
+    {"area":{"zh":"台南市區","en":"Tainan City","vi":"Thành phố Đài Nam","th":"เมืองไถหนาน","id":"Kota Tainan"},
+     "taoyuan_to_city":{"zh":"$6,200","en":"$6,200","vi":"$6,200","th":"$6,200","id":"$6,200"},
+     "city_to_taoyuan":{"zh":"$5,900","en":"$5,900","vi":"$5,900","th":"$5,900","id":"$5,900"},
+     "songshan_city":{"zh":"$6,700","en":"$6,700","vi":"$6,700","th":"$6,700","id":"$6,700"},
+     "vehicle":{"zh":"5人座／7人座 +$200","en":"5-Seater / 7-Seater +$200","vi":"5 chỗ / 7 chỗ +$200","th":"5 ที่นั่ง / 7 ที่นั่ง +$200","id":"5-Seater / 7-Seater +$200"},
+     "note":{"zh":"兒童安全座椅 +$100/個","en":"Child seat +$100/each","vi":"Ghế trẻ em +$100/cái","th":"เบาะเด็ก +$100/ชิ้น","id":"Child seat +$100/each"}
+    },
+    {"area":{"zh":"台中市區","en":"Taichung City","vi":"Thành phố Đài Trung","th":"เมืองไถจง","id":"Kota Taichung"},
+     "taoyuan_to_city":{"zh":"$3,800","en":"$3,800","vi":"$3,800","th":"$3,800","id":"$3,800"},
+     "city_to_taoyuan":{"zh":"$3,600","en":"$3,600","vi":"$3,600","th":"$3,600","id":"$3,600"},
+     "songshan_city":{"zh":"$4,100","en":"$4,100","vi":"$4,100","th":"$4,100","id":"$4,100"},
+     "vehicle":{"zh":"5人座／7人座 +$200","en":"5-Seater / 7-Seater +$200","vi":"5 chỗ / 7 chỗ +$200","th":"5 ที่นั่ง / 7 ที่นั่ง +$200","id":"5-Seater / 7-Seater +$200"},
+     "note":{"zh":"夜間(22:00–06:00) +$300","en":"Night (22:00–06:00) +$300","vi":"Ban đêm (22:00–06:00) +$300","th":"กลางคืน (22:00–06:00) +$300","id":"Night (22:00–06:00) +$300"}
+    },
+    {"area":{"zh":"高雄市區","en":"Kaohsiung City","vi":"Thành phố Cao Hùng","th":"เมืองเกาสง","id":"Kota Kaohsiung"},
+     "taoyuan_to_city":{"zh":"$7,200","en":"$7,200","vi":"$7,200","th":"$7,200","id":"$7,200"},
+     "city_to_taoyuan":{"zh":"$6,900","en":"$6,900","vi":"$6,900","th":"$6,900","id":"$6,900"},
+     "songshan_city":{"zh":"$7,600","en":"$7,600","vi":"$7,600","th":"$7,600","id":"$7,600"},
+     "vehicle":{"zh":"5人座／7人座 +$300","en":"5-Seater / 7-Seater +$300","vi":"5 chỗ / 7 chỗ +$300","th":"5 ที่นั่ง / 7 ที่นั่ง +$300","id":"5-Seater / 7-Seater +$300"},
+     "note":{"zh":"含電子收據","en":"Includes electronic receipt","vi":"Bao gồm hóa đơn điện tử","th":"รวมใบเสร็จอิเล็กทรอนิกส์","id":"Includes electronic receipt"}
+    }
+  ],
+  "note":{"zh":"※ 價格為參考，實際費用依路況、等候時間與車型調整。","en":"※ Prices are reference, actual cost depends on traffic, waiting time and vehicle type.","vi":"※ Giá tham khảo, chi phí thực tế tùy tình trạng đường, thời gian chờ và loại xe.","th":"※ ราคานี้เป็นการอ้างอิง, ค่าจริงขึ้นอยู่กับสภาพการจราจร เวลารอ และรถที่ใช้","id":"※ Prices are reference, actual cost depends on traffic, waiting time and vehicle type."},
+  "bookingTitle":{"zh":"如何預約","en":"How to book","vi":"Cách đặt xe","th":"วิธีจอง","id":"Cara Pemesanan"},
+  "booking_steps":[
+    {"zh":"加 LINE 或來電，提供日期、航班、出發地／目的地、人數與行李件數。","en":"Add LINE or call, provide date, flight, pickup/drop-off, passengers, luggage.","vi":"Thêm LINE hoặc gọi, cung cấp ngày, chuyến bay, nơi đi/đến, số người, hành lý.","th":"เพิ่ม LINE หรือโทร แจ้งวันที่ เที่ยวบิน ตำแหน่ง รับ/ส่ง จำนวนผู้โดยสาร สัมภาระ","id":"Tambahkan LINE atau telepon, berikan tanggal, penerbangan, lokasi, penumpang, bagasi."},
+    {"zh":"確認金額與取件位置（航廈、門牌或飯店）。","en":"Confirm price and pickup location (terminal, address, hotel).","vi":"Xác nhận giá và nơi đón (ga, địa chỉ, khách sạn).","th":"ยืนยันราคาและสถานที่รับ (อาคารผู้โดยสาร บ้านพัก โรงแรม)","id":"Konfirmasi harga dan lokasi jemput (terminal, alamat, hotel)."},
+    {"zh":"行前一天再次確認，司機會於出發前主動聯繫。","en":"Confirm again the day before, driver will contact before departure.","vi":"Xác nhận lại trước ngày đi, tài xế sẽ liên hệ trước khi đi.","th":"ยืนยันอีกครั้งก่อนวันเดินทาง คนขับจะติดต่อก่อนออกเดินทาง","id":"Konfirmasi lagi sehari sebelum, supir akan menghubungi sebelum keberangkatan."}
+  ],
+  "extraService":{"zh":"亦可提供長短途包車、商務包車與旅遊行程。","en":"Also available: short/long charter, business car, travel itinerary.","vi":"Cũng cung cấp: xe thuê ngắn/dài, xe thương mại, tour.","th":"สามารถให้บริการรถเช่าแบบสั้น/ยาว รถธุรกิจ และทัวร์","id":"Juga tersedia: sewa mobil pendek/panjang, mobil bisnis, perjalanan wisata."},
+  "footer":{"zh":"機場接送服務．All rights reserved.","en":"Airport Transfer Service．All rights reserved.","vi":"Dịch vụ đưa đón sân bay．All rights reserved.","th":"บริการรถรับส่งสนามบิน．All rights reserved.","id":"Layanan Antar Bandara．All rights reserved."}
+}
